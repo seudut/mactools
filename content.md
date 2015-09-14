@@ -65,17 +65,15 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
       <pre><code class="bash">ag 'send_scr' ./ --ignore-dir target/</code></pre>
     * search keywork with filetype
       <pre><code class="bash">ag 'send_scr' . --cc</code></pre>
-
+      <pre><code class="bash">ag 'iosversion' --python </code></pre>
 
 
 [slide]
 
 * 7zip, zip/unzip, unrar
 * wget lftp
-* iTerm2
-* tmux + macvim + 
 ## tools
-* Quicksilver  - Afred
+* [Quicksilver](http://qsapp.com/)  - Afred
  * AppleScript
 * Karabiner - <https://pqrs.org/osx/karabiner/>
 * Seil - <https://pqrs.org/osx/karabiner/seil.html.en>
@@ -83,7 +81,16 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 [slide]
 
 # Shortcut Key on Commands Line
-* Ctrl +
+* Ctrl+A, Ctrl+E, Ctrl+B, Ctrl+F, Alt+b, Alt+f
+* Ctrl+L, Ctrl+W, Ctrl+K, Ctrl+U, Ctrl+Y
+* Ctrl+P, Ctrl+N
+* Ctrl+R 
+
+# commands
+* cd; cd - ; cd ~/
+* zsh 
+
+[slide]
 ## Key remap for MacBook
 * Karabiner
 * Seil
@@ -96,6 +103,7 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
     ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log
 
+[slide]
 ## percol
 
 # Vim Basic
