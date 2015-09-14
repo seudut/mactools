@@ -81,7 +81,7 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 [slide]
 
 # Shortcut Key on Commands Line
-* Ctrl+A, Ctrl+E, Ctrl+B, Ctrl+F, Alt+b, Alt+f
+* motion Ctrl+A, Ctrl+E, Ctrl+B, Ctrl+F, Alt+b, Alt+f
 * Ctrl+L, Ctrl+W, Ctrl+K, Ctrl+U, Ctrl+Y
 * Ctrl+P, Ctrl+N
 * Ctrl+R 
@@ -107,10 +107,37 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 ## percol
 
 # Vim Basic
-* Macvim
+## Macvim
+* Vim vs Emacs
+* :help
+* modal editing, four main modes
+  * Normal mode
+  * Visual mode
+  * Insert mode
+  * Command-line mode
+
+* switch mode, <Esc>, i, v
+
+* Normal Mode
+  * motion
+    * h, j, k, l
+    * C-B, C-F, C-U, C-D
+    * f, t
+  * change
+    * x, d, 
+    * y, p
+    * u, C-R
+
+* Never using arrow key
+
+* stay in Normal mode as much as possible
+  Insert mode is the weakest mode
+* [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
+
 * Vimperator - Firefox
 
 ## tmux + zsh + vim
 
 # RegExp for Log 
 * regular expression vs. wildcards
+* this is the firsit
