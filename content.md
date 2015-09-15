@@ -230,7 +230,6 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
 * Stay in Normal mode as much as possible
   * Insert mode is the weakest mode
-  * most time we are 
 
 * Never use arrow key, Use h j k l, C-F, C-B, C-U, C-D in Normall mode
 
@@ -280,4 +279,20 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
   * class `[]`
   * `^ $ \s \d \w`
 
-* Usage Sample - CPVE logs 
+[slide]
+* Usage Sample
+  * match str1 and str2 
+      
+      <pre><code class="bash">str1.*str2</code></pre>
+
+  * match str1 or str2
+
+      <pre><code class="bash">str1|str2</code></pre>
+
+  * match str1 or str2 and str3
+      <pre><code class="bash">(str1|str2).*str3</code></pre>
+
+  * cpve logs
+      
+[slide]
+Thank You
