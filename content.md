@@ -5,24 +5,17 @@ transition: move
 files: /js/demo.js,/css/demo.css,/js/zoom.js
 theme: dark
 <!-- 
-这些都不是我自己的，都是从网上别人开发的工具，都是开源，免费的
-都是一些最基本的概念， 没有什么技术含量, 一是我自己懂得的也不多，不太会讲，二时
+1. 这些都不是我自己的，都是从网上别人开发的工具，都是开源，免费的
+2. 都是一些最基本的概念， 没有什么技术含量, 一是我自己懂得的也不多，不太会讲，二时
 时间不够，大多数需要自己去练习。
+3. 其中很多个人自定的，也许只适合自己，仅供大家参考
 Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 -->
 
 [slide]
-# Contens
-## Test
-<small> Peng Li </small>
-
-# 样式展示 {:&.flexbox.vleft}
-> nodePPT 让每个人都爱上做分享！
-
-[slide]
 ## Agenda
 ---
-* Efficient Tools on Mac (command line) {:&.rollIn}
+* Efficient Tools on Mac/Unix (command line) {:&.rollIn}
 * Shortcut Key on bash/zsh
 * Vim Basic
 * RegExp Basic
@@ -110,16 +103,24 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 # Shortcuts on bash - command line
 * motion {:&.rollIn}
   * Ctrl+A, Ctrl+E
-  * Ctrl+B, Ctrl+F, Alt+b, Alt+f
+  * Ctrl+B, Ctrl+F, 
+  * Alt+b, Alt+f
+  * Ctrl+L
 * Yank & Paste
-  * Ctrl+L, Ctrl+K, Ctrl+U, Ctrl+Y
+  * Ctrl+K, Ctrl+U, Ctrl+Y
   * Ctrl+D, Alt+d, Ctrl+W
-* Command
+
+[slide]
+
+* history Command {:&.rollIn}
   * Ctrl+P, Ctrl+N
-  * Ctrl+R 
+  * Ctrl+R
   * !N, !!, - run command in history
+
 * Job break
-  * Ctrl+C, Ctrl+Z
+  * Ctrl+C
+  * Ctrl+Z
+
 * TAB completion 
   * use TAB completion as much as possible
   * replace Zsh with bash, TAB completion in zsh is much better 
@@ -132,15 +133,14 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 * scp 
   * more convenient than USB flash copy and ftp transfer
   * examples
-    * <pre><code class="bash">$ scp localfile peli3-imac@10.140.112.160:temp/</code></pre>
-    * <pre><code class="bash">$ scp peli3-imac@10.140.112.160:temp/remotefile ./localfile</code></pre>
-    * <pre><code class="bash">$ scp -r local_dir peli3-imac@10.140.112.160:temp/</code></pre>
+     <pre><code class="bash">$ scp localfile peli3-imac@10.140.112.160:temp/</code></pre>
+     <pre><code class="bash">$ scp peli3-imac@10.140.112.160:temp/remotefile ./localfile</code></pre>
+     <pre><code class="bash">$ scp -r local_dir peli3-imac@10.140.112.160:temp/</code></pre>
 * SSH vs VNC
-  * if you are farmiliar to commandline, using SSH more convient and better than VNC to access remote machine
-  * build CPVE android/Linux on remote VM
-* grep/sed/awk/perl
-
-  merge multiple jabber log(jabber.log.n) into single file (full.log)
+  * demo build CPVE android/Linux on remote VM
+* combine multiple command - && or pipe
+ 
+  * Example:  merge multiple jabber log
 
     <pre><code type="bash">$ ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log</code></pre>
 
@@ -150,9 +150,8 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
 # Vim Basic
 * [Vim](http://www.vim.org/) vs [Emacs](https://www.gnu.org/software/emacs/), [sublime Text](http://www.sublimetext.com/), [atom](https://atom.io/) {:&.rollIn}
-  * Open Source, no license, free
+  * Open Source, no license, free, cross-platforms
   * Plug-Ins
-  * maintain by community
   * vim is modal editing editor
   * vim shorter key mapping
   * vim is default editor on Linux server or even embedded development 
@@ -160,18 +159,16 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 * Install Macvim to replace with default vim
     * <pre><code class="bash">$ brew install macvim</code></pre>
 
-* `:help` for document
-
 * modal editing, four main modes
-  * Normal mode
-  * Visual mode
-  * Insert mode
-  * Command-line mode
-* switch mode, `<Esc>`, `i`, `v`, `a`, `o`
+  * *Normal mode* `Esc` -  motion and edit
+  * Visual mode - select and copy `v`
+  * Insert mode - input text `i, a, o`
+  * Command-line mode - execute command `:`
 
 [slide]
 
 * Normal Mode
+  * input `<Esc>` to Normal mode
   * motion
     * h, j, k, l
     * e, w, b, f, {, } 
@@ -179,7 +176,7 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
     * f, t
   * change
     * delete `x, d,`
-    * Yand & Paste `y, p`
+    * Yank & Paste `y, p`
     * Undo & Redo `u, C-R`
   * Text Objects
     * word
@@ -203,9 +200,9 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
 # vimrc - config file
   
-  vim is hard to use without any config - `~/.vimrc`,  using vimrc example which is built in step by step
+  vim is hard to use without any config - `~/.vimrc`
   
-  copy `vimrc_example.vim` to `~/.vimrc`
+* Using default `vimrc_example.vim` to `~/.vimrc`  {:&.rollIn}
 
   <pre><code class="vim">:!cp $VIMRUNTIME/vimrc_example.vim ~/.vimrc</code></pre>
 
@@ -214,6 +211,8 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
   <pre><code class="bash">$ cp /usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime/vimrc_example.vim ~/.vimrc</code></pre>
 
 * Key Mapping
+  * `nmap cmap vmap`
+  * mapping 'jj' to Esc
 
 * Plugins
   * plug-in manager
@@ -234,10 +233,6 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
   * most time we are 
 
 * Never use arrow key, Use h j k l, C-F, C-B, C-U, C-D in Normall mode
-
-* Not remember, just use it, m
-
-* [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 
 * [vim wiki tips](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
@@ -265,7 +260,24 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 [slide]
 
 # RegExp for Log 
-* regular expression vs. wildcards
 
-* 
-## percol
+<!--  most command tool and text editor support regular expressions, using regexp can search what we want more quickly -->
+  most editor and command support regular expressions
+
+* regular expression vs. wildcards {:&.rollIn}
+  * `*` can be a wildcard or a meta character in regexp depend on the context or the command 
+
+* Simple patterns
+  * Metacharacters
+    * `.` - dot, any single character except a newline
+    * `*` - star, match preceding item zero or more times
+    * `+` - plus, match preceding iterm one or more time
+
+    `.*` match any character any number of times
+
+  * Alternatives `|`  or
+  * group `()`
+  * class `[]`
+  * `^ $ \s \d \w`
+
+* Usage Sample - CPVE logs 
