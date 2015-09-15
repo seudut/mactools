@@ -6,6 +6,8 @@ files: /js/demo.js,/css/demo.css,/js/zoom.js
 theme: dark
 <!-- 
 这些都不是我自己的，都是从网上别人开发的工具，都是开源，免费的
+
+没有什么技术含量
 Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 -->
 
@@ -20,16 +22,16 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 [slide]
 ## Agenda
 ---
-* Tools on Commond Line {:&.rollIn}
-* Shortcut Key on Command Line
+* Efficient Tools on Mac (command line) {:&.rollIn}
+* Shortcut Key on bash/zsh
 * Vim Basic
 * RegExp Basic
 
 [slide]
 
-# Tools on Commond Line
+# Efficient Tools
 * [Homebrew](http://brew.sh/) - package manager for OSX {:&.rollIn}
- * Install
+ * Install <http://brew.sh/>
 
     <pre><code class="ruby">ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"</code></pre>
  
@@ -42,7 +44,19 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
 [slide]
 
-# Tools on Commond Line (Cont.)
+* [Quicksilver](http://qsapp.com/)  - Applecation Launcher 
+ * Open Source on [github](https://github.com/quicksilver/Quicksilver), no license 
+ * [User Guide](http://qsapp.com/wiki/Quicksilver_User's_Guide)
+ * Fuzzy matching
+ * Launch App
+ * Open File/Directory
+ * support AppleScript 
+   * hotkey to toggle applecation
+ * alternative -  [Alfred](https://www.alfredapp.com/)
+
+[slide]
+
+<!-- # Tools on Commond Line (Cont.) -->
 <!-- * [the\_silver\_searcher](http://geoff.greer.fm/ag/) a tool for searching code - Ag {:&.rollIn}-->
 * [the\_silver\_searcher](http://geoff.greer.fm/ag/) a tool for searching code - Ag
 
@@ -56,39 +70,69 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
    ![Alt text](/ag_grep.png)
 
+[slide]
 
- * Usage - example
+* [the\_silver\_searcher](http://geoff.greer.fm/ag/) a tool for searching code - Ag
+
+ * Usage 
+
     * find file with file name 
-      <pre><code class="bash">ag -sg 'SessionImpl' ./cpve</code></pre>
+      <pre><code class="bash">$ ag -sg 'SessionImpl' ./cpve</code></pre>
+      equal: <pre><code class="bash">$ find ./cpve -name '\*SessionImpl\*'</code></pre>
     * find word in file
-      <pre><code class="bash">ag -s 'send_scr' ./</code></pre>
-      <pre><code class="bash">ag 'send_scr' ./ --ignore-dir target/</code></pre>
+      <pre><code class="bash">$ ag -s 'send_scr' ./</code></pre>
+      <pre><code class="bash">$ ag 'send_scr' ./ --ignore-dir target/</code></pre>
     * search keywork with filetype
-      <pre><code class="bash">ag 'send_scr' . --cc</code></pre>
-      <pre><code class="bash">ag 'iosversion' --python </code></pre>
-
+      <pre><code class="bash">$ ag 'send_scr' . --cc</code></pre>
+      <pre><code class="bash">$ ag 'iosversion' --python </code></pre>
 
 [slide]
 
-* 7zip, zip/unzip, unrar
+* 7zip
+    <pre><code class="bash">$ brew install p7zip</code></pre>
 * wget lftp
-## tools
-* [Quicksilver](http://qsapp.com/)  - Afred
- * AppleScript
+  * scripting with ftp client
+  * example with lftp-cp and 7z
+
+[slide]
+
 * Karabiner - <https://pqrs.org/osx/karabiner/>
 * Seil - <https://pqrs.org/osx/karabiner/seil.html.en>
 
 [slide]
 
-# Shortcut Key on Commands Line
-* motion Ctrl+A, Ctrl+E, Ctrl+B, Ctrl+F, Alt+b, Alt+f
-* Ctrl+L, Ctrl+W, Ctrl+K, Ctrl+U, Ctrl+Y
+# Shortcuts on bash - command line
+* motion 
+  * Ctrl+A
+  * Ctrl+E
+  * Ctrl+B, Alt+b
+  * Ctrl+F, Alt+f
+* Yank & Paste
+  * Ctrl+L, Ctrl+W, Ctrl+K, Ctrl+U, Ctrl+Y
+  * Ctrl+D, Alt+d
+* History
+  * Ctrl+R 
 * Ctrl+P, Ctrl+N
-* Ctrl+R 
 
-# commands
+* Job break
+  * Ctrl+C
+  * Ctrl+Z
+
+[slide]
+
+* replace Zsh with bash
+  <pre><code class="bash">$ chsh -s /bin/zsh</code></pre>
+  * advantage: 
+
+# short commands
 * cd; cd - ; cd ~/
 * zsh 
+
+*  command full
+<http://www.commandlinefu.com/commands/browse/sort-by-votes>
+ * grep/sed/awk/perl
+
+    ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log
 
 [slide]
 ## Key remap for MacBook
@@ -133,6 +177,12 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 * stay in Normal mode as much as possible
   Insert mode is the weakest mode
 * [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
+
+
+* step by step
+* plugin package manager
+* vimrc example
+* first c program
 
 * Vimperator - Firefox
 
