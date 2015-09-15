@@ -3,6 +3,6 @@
 /* this is an example */
 
 int main(){
-    printf ("hello");
+    printf ("hello, vim");
     return 1;
 }

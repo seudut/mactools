@@ -6,8 +6,8 @@ files: /js/demo.js,/css/demo.css,/js/zoom.js
 theme: dark
 <!-- 
 这些都不是我自己的，都是从网上别人开发的工具，都是开源，免费的
-
-没有什么技术含量
+都是一些最基本的概念， 没有什么技术含量, 一是我自己懂得的也不多，不太会讲，二时
+时间不够，大多数需要自己去练习。
 Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 -->
 
@@ -76,118 +76,196 @@ Powered By nodePPT [](https://github.com/ksky521/nodePPT)
 
  * Usage 
 
-    * find file with file name 
+    * find file with file name {:&.rollIn}
       <pre><code class="bash">$ ag -sg 'SessionImpl' ./cpve</code></pre>
-      equal: <pre><code class="bash">$ find ./cpve -name '\*SessionImpl\*'</code></pre>
-    * find word in file
-      <pre><code class="bash">$ ag -s 'send_scr' ./</code></pre>
-      <pre><code class="bash">$ ag 'send_scr' ./ --ignore-dir target/</code></pre>
+      equal: <pre><code class="bash">$ find ./cpve -name '*SessionImpl*'</code></pre>
+    * find word in files
+      * <pre><code class="bash">$ ag -s 'send_scr' ./</code></pre>
+      * <pre><code class="bash">$ ag 'send_scr' ./ --ignore-dir target/</code></pre>
     * search keywork with filetype
-      <pre><code class="bash">$ ag 'send_scr' . --cc</code></pre>
-      <pre><code class="bash">$ ag 'iosversion' --python </code></pre>
+      * <pre><code class="bash">$ ag 'send_scr' . --cc</code></pre>
+      * <pre><code class="bash">$ ag 'iosversion' --python </code></pre>
+  * integrated in vim, plugin ack.vim
 
 [slide]
 
-* 7zip
+* 7zip {:&.rollIn}
     <pre><code class="bash">$ brew install p7zip</code></pre>
-* wget lftp
-  * scripting with ftp client
-  * example with lftp-cp and 7z
+* wget, lftp - clients for http and ftp
+  * <pre><code class="bash">$ brew install wget</code></pre>
+  * <pre><code class="bash">$ brew install lftp</code></pre>
+  * demo lftp-cp and 7z
 
-[slide]
+    transfer local file to cmbu-ftp
+  * <pre><code class="bash">$ lftp-cp local_file remote_file </code></pre>
 
-* Karabiner - <https://pqrs.org/osx/karabiner/>
-* Seil - <https://pqrs.org/osx/karabiner/seil.html.en>
+* two tools for Key Remap on Mac keyboard
+  * Karabiner - <https://pqrs.org/osx/karabiner/>
+  * Seil - <https://pqrs.org/osx/karabiner/seil.html.en>
+  * remap Caps Lock to Ctrl/Esc
+* tmux + vim + zsh for programming 
 
 [slide]
 
 # Shortcuts on bash - command line
-* motion 
-  * Ctrl+A
-  * Ctrl+E
-  * Ctrl+B, Alt+b
-  * Ctrl+F, Alt+f
+* motion {:&.rollIn}
+  * Ctrl+A, Ctrl+E
+  * Ctrl+B, Ctrl+F, Alt+b, Alt+f
 * Yank & Paste
-  * Ctrl+L, Ctrl+W, Ctrl+K, Ctrl+U, Ctrl+Y
-  * Ctrl+D, Alt+d
-* History
+  * Ctrl+L, Ctrl+K, Ctrl+U, Ctrl+Y
+  * Ctrl+D, Alt+d, Ctrl+W
+* Command
+  * Ctrl+P, Ctrl+N
   * Ctrl+R 
-* Ctrl+P, Ctrl+N
-
+  * !N, !!, - run command in history
 * Job break
-  * Ctrl+C
-  * Ctrl+Z
+  * Ctrl+C, Ctrl+Z
+* TAB completion 
+  * use TAB completion as much as possible
+  * replace Zsh with bash, TAB completion in zsh is much better 
+    <pre><code class="bash">$ chsh -s /bin/zsh</code></pre>
 
 [slide]
 
-* replace Zsh with bash
-  <pre><code class="bash">$ chsh -s /bin/zsh</code></pre>
-  * advantage: 
+# other commands
+* cd; cd - ; cd ~ {:&.rollIn}
+* scp 
+  * more convenient than USB flash copy and ftp transfer
+  * examples
+    * <pre><code class="bash">$ scp localfile peli3-imac@10.140.112.160:temp/</code></pre>
+    * <pre><code class="bash">$ scp peli3-imac@10.140.112.160:temp/remotefile ./localfile</code></pre>
+    * <pre><code class="bash">$ scp -r local_dir peli3-imac@10.140.112.160:temp/</code></pre>
+* SSH vs VNC
+  * if you are farmiliar to commandline, using SSH more convient and better than VNC to access remote machine
+  * build CPVE android/Linux on remote VM
+* grep/sed/awk/perl
 
-# short commands
-* cd; cd - ; cd ~/
-* zsh 
+  merge multiple jabber log(jabber.log.n) into single file (full.log)
 
-*  command full
-<http://www.commandlinefu.com/commands/browse/sort-by-votes>
- * grep/sed/awk/perl
+    <pre><code type="bash">$ ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log</code></pre>
 
-    ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log
-
-[slide]
-## Key remap for MacBook
-* Karabiner
-* Seil
-* remap Caps Lock to Ctrl
-* command 
- *  command full
-<http://www.commandlinefu.com/commands/browse/sort-by-votes>
- * cd ; cd - ; cd ~
- * grep/sed/awk/perl
-
-    ls -rl jabber.log*  | awk '{print $9}' | Xargs cat >> full.log
+* An interesting page for unix command vote [commandlinefu](http://www.commandlinefu.com/commands/browse/sort-by-votes)
 
 [slide]
-## percol
 
 # Vim Basic
-## Macvim
-* Vim vs Emacs
-* :help
+* [Vim](http://www.vim.org/) vs [Emacs](https://www.gnu.org/software/emacs/), [sublime Text](http://www.sublimetext.com/), [atom](https://atom.io/) {:&.rollIn}
+  * Open Source, no license, free
+  * Plug-Ins
+  * maintain by community
+  * vim is modal editing editor
+  * vim shorter key mapping
+  * vim is default editor on Linux server or even embedded development 
+
+* Install Macvim to replace with default vim
+    * <pre><code class="bash">$ brew install macvim</code></pre>
+
+* `:help` for document
+
 * modal editing, four main modes
   * Normal mode
   * Visual mode
   * Insert mode
   * Command-line mode
+* switch mode, `<Esc>`, `i`, `v`, `a`, `o`
 
-* switch mode, <Esc>, i, v
+[slide]
 
 * Normal Mode
   * motion
     * h, j, k, l
+    * e, w, b, f, {, } 
     * C-B, C-F, C-U, C-D
     * f, t
   * change
-    * x, d, 
-    * y, p
-    * u, C-R
+    * delete `x, d,`
+    * Yand & Paste `y, p`
+    * Undo & Redo `u, C-R`
+  * Text Objects
+    * word
+    * sentence
+    * line
+    * paragraph
+    * example: `viw` `vaw` `ciw` `diw` `yaw`
 
-* Never using arrow key
+[slide]
+# other concept
+* Buffer {:&.rollIn}
+  * <pre><code class="vim">:help buffers<CR></code></pre>
 
-* stay in Normal mode as much as possible
-  Insert mode is the weakest mode
+* Window
+  * <pre><code class="vim">:help windows<CR></code></pre>
+* Tab
+* Registers
+* Marks
+
+[slide]
+
+# vimrc - config file
+  
+  vim is hard to use without any config - `~/.vimrc`,  using vimrc example which is built in step by step
+  
+  copy `vimrc_example.vim` to `~/.vimrc`
+
+  <pre><code class="vim">:!cp $VIMRUNTIME/vimrc_example.vim ~/.vimrc</code></pre>
+
+  or 
+
+  <pre><code class="bash">$ cp /usr/local/Cellar/macvim/7.4-73_1/MacVim.app/Contents/Resources/vim/runtime/vimrc_example.vim ~/.vimrc</code></pre>
+
+* Key Mapping
+
+* Plugins
+  * plug-in manager
+    * [Vundle](https://github.com/VundleVim/Vundle.vim)
+  * [vim awesome](http://vimawesome.com/) - A page for most popular vim plugins
+
+[slide]
+
+# some tips
+
+* Use `:help` for any document {:&.rollIn}
+  * <pre><code class="vim">:help h</code></pre>
+  * <pre><code class="vim">:help Normal</code></pre>
+  * <pre><code class="vim">:help map</code></pre>
+
+* Stay in Normal mode as much as possible
+  * Insert mode is the weakest mode
+  * most time we are 
+
+* Never use arrow key, Use h j k l, C-F, C-B, C-U, C-D in Normall mode
+
+* Not remember, just use it, m
+
 * [Seven habits of effective text editing](http://www.moolenaar.net/habits.html)
 
+* [vim wiki tips](http://vim.wikia.com/wiki/Vim_Tips_Wiki)
 
-* step by step
-* plugin package manager
-* vimrc example
-* first c program
+  you can find lots of tips of usage of vim
 
-* Vimperator - Firefox
+* [vim cheat sheel](http://www.viemu.com/a_vi_vim_graphical_cheat_sheet_tutorial.html)
 
-## tmux + zsh + vim
+[slide]
+
+# demo
+
+* vim for the first c program {:&.rollIn}
+
+* vim for C/C++ environment 
+  * suggest plugins
+    * FuzzyFinder or Ctrlp or CommandT
+    * ctags - Exuberant Ctags
+    * gtags - gnu global
+    * Easymotion
+    * YouCompleteMe
+  * [vim awesome](http://vimawesome.com/) - for more plugins, Screen shot or demo on youtube
+
+* Vimperator - an Firefox Add-ons with Vim shortcuts
+
+[slide]
 
 # RegExp for Log 
 * regular expression vs. wildcards
-* this is the firsit
+
+* 
+## percol
